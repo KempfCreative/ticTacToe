@@ -1,0 +1,81 @@
+<!doctype html>
+ <html class="no-js" lang="">
+     <head>
+         <meta charset="utf-8">
+         <meta http-equiv="x-ua-compatible" content="ie=edge">
+         <title>Tic-Tac-Toe</title>
+         <meta name="description" content="">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link href="https://fonts.googleapis.com/css?family=Chelsea+Market" rel="stylesheet">
+         <link rel="stylesheet" href="stylesheets/tictactoe.css">
+     </head>
+     <body>
+         <div class="main">
+            <section class="game-piece-decoration">
+                <span class="x"></span>
+                <span class="x"></span>
+                <span class="x"></span>
+                <span class="o"></span>
+                <span class="o"></span>
+                <span class="o"></span>
+            </section>
+            <h1>Tic-Tac-Toe</h1>
+             <section id="game-board" class="game-board_outer">
+                 <form action="" id="game-board_form" class="game-board_inner">
+                    <span class="game-board_elements x">
+                        <input type="checkbox" class="game-square" id="11">
+                        <label class="game-square_label" for="11"></label>
+                    </span>
+                    <span class="game-board_elements x">
+                        <input type="checkbox" class="game-square" id="12">
+                        <label class="game-square_label" for="12"></label>
+                    </span>
+                    <span class="game-board_elements x">
+                        <input type="checkbox" class="game-square" id="13">
+                        <label class="game-square_label" for="13"></label>
+                    </span>
+                    <span class="game-board_elements x">
+                        <input type="checkbox" class="game-square" id="21">
+                        <label class="game-square_label" for="21"></label>
+                    </span>
+                    <span class="game-board_elements x">
+                        <input type="checkbox" class="game-square" id="22">
+                        <label class="game-square_label" for="22"></label>
+                    </span>
+                    <span class="game-board_elements x">
+                        <input type="checkbox" class="game-square" id="23">
+                        <label class="game-square_label" for="23"></label>
+                    </span>
+                    <span class="game-board_elements x">
+                        <input type="checkbox" class="game-square" id="31">
+                        <label class="game-square_label" for="31"></label>
+                    </span>
+                    <span class="game-board_elements x">
+                        <input type="checkbox" class="game-square" id="32">
+                        <label class="game-square_label" for="32"></label>
+                    </span>
+                    <span class="game-board_elements x">
+                        <input type="checkbox" class="game-square" id="33">
+                        <label class="game-square_label" for="33"></label>
+                    </span>
+                 </form>
+             </section>
+             <section class="player-area">
+                 <div class="player-bubble active player-bubble_x">
+                     <span class="player-bubble-icon_x"></span>
+                     <p class="player-name">Player 1</p>
+                 </div>
+                 <div class="player-bubble player-bubble_o">
+                     <span class="player-bubble-icon_o"></span>
+                     <p class="player-name">Player 2</p>
+                 </div>
+             </section>
+             <div class="restart-icon" id="restart"></div>
+         </div>
+
+         <script src="scripts/tictactoe.js"></script>
+         <script>
+             ticTacToe.init();
+         </script>
+     </body>
+ </html>

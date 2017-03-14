@@ -1,0 +1,489 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    min-width: 100%;
+    width: 100vw;
+    min-height: 100%;
+    height: 100vh;
+    display: block;
+    background-color: #dcb1ba;
+    background-image: url('../images/seamless-wood-grain.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Chelsea Market', cursive;
+    text-align: center;
+    font-size: 3em;
+    display: block;
+    padding: 20px 0 0 0;
+    margin: 0 0 -40px 0;
+    color: white;
+    text-shadow: -3px 2px 1px #e7b27b;
+}
+
+h2 {
+    font-family: 'Chelsea Market', cursive;
+}
+
+p {
+    font-family: 'Chelsea Market', cursive;
+}
+
+.game-board_outer {
+    width: 90%;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    display: block;
+    background-color: white;
+    box-shadow: 0px 4px 10px 0px #333;
+    z-index: 200;
+}
+.game-board_outer:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.game-board_inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.game-board_elements {
+    width: 33.333333333333333%;
+    height: 33.333333333333333%;
+    float: left;
+    border: 1px solid #ccc;
+}
+
+.game-square {
+    display: none;
+}
+.game-square_label {
+    height: 100%;
+    width:  100%;
+    display: block;
+    cursor: pointer;
+}
+
+.game-square:disabled + .game-square_label {
+    height: 100%;
+    width: 100%;
+}
+
+.x .game-square:disabled + .game-square_label {
+    background-image: url('../images/x3d.svg');
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+}
+
+.o .game-square:disabled + .game-square_label {
+    background-image: url('../images/o3d.svg');
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+}
+
+.player-area {
+    bottom:5%;
+    left:50%;
+    width:90%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    display: block;
+}
+
+.player-bubble.active{
+    box-shadow: 0px 0px 0px 10px #85471e;
+}
+
+.player-bubble_x {
+    width: 150px;
+    height:30px;
+    border-radius: 15px;
+    background-color: #fff;
+    display: block;
+    position: relative;
+    float: left;
+}
+
+.player-bubble_o {
+    width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    display: block;
+    position: relative;
+    float: right;
+}
+
+.player-name {
+    position: absolute;
+    right:15px;
+    top:2px;
+    text-align: center;
+}
+
+.player-bubble-icon_x {
+    position: absolute;
+    left: 5px;
+    top:2px;
+    width: 25px;
+    height:26px;
+    background-image: url('../images/x3d.svg');
+    background-size: 25px;
+}
+
+.player-bubble-icon_o {
+    position: absolute;
+    left: 5px;
+    top:2px;
+    width: 25px;
+    height:26px;
+    background-image: url('../images/o3d.svg');
+    background-size: 25px;
+}
+
+.restart-icon {
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 52px;
+    display: block;
+    background-image: url('../images/reload.svg');
+    background-size: 50px;
+    cursor: pointer;
+    z-index: 300;
+}
+.end-screen {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: 100%;
+    z-index: 300;
+    font-size: 5em;
+    color: red;
+    transform: translate(-50%, -50%);
+    display: block;
+    text-align: center;
+}
+
+@media only screen and (orientation: landscape) {
+    h1 {
+        font-family: 'Chelsea Market', cursive;
+        text-align: right;
+        font-size: 3em;
+        display: block;
+        padding: 5px 5px 0 0;
+        margin: 0 0 0px 0;
+        color: white;
+        text-shadow: -3px 2px 1px #e7b27b;
+    }
+
+    .game-board_outer {
+        width: 50%;
+        top: 5%;
+        left: 5%;
+        transform: translate(0, 0);
+        position: absolute;
+        display: block;
+        background-color: white;
+        box-shadow: 0px 4px 10px 0px #333;
+        z-index: 200;
+    }
+    .game-board_outer:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    .player-area {
+        top: 20%;
+        left: 58.5%;
+        width: 40%;
+        position: absolute;
+        transform: translate(0, 0);
+        display: block;
+    }
+    .player-bubble_x {
+        width: 100%;
+        height: 30px;
+        border-radius: 15px;
+        background-color: #fff;
+        display: block;
+        position: relative;
+        float: left;
+        margin: 20px 0 0 0;
+    }
+
+    .player-bubble_o {
+        width: 100%;
+        height: 30px;
+        border-radius: 15px;
+        background-color: #fff;
+        display: block;
+        position: relative;
+        float: left;
+        margin: 20px 0 0 0;
+    }
+
+    .restart-icon {
+        position: absolute;
+        bottom: 5%;
+        left: 75%;
+        transform: translateX(0%);
+        width: 50px;
+        height: 52px;
+        display: block;
+        background-image: url('../images/reload.svg');
+        background-size: 50px;
+        cursor: pointer;
+        z-index: 300;
+    }
+    .end-screen {
+        top: 50%;
+        left: 0%;
+        position: absolute;
+        width: 70%;
+        z-index: 300;
+        font-size: 10em;
+        color: red;
+        transform: translate(0%, -50%);
+        display: block;
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 900px)  {
+    h1 {
+        font-family: 'Chelsea Market', cursive;
+        text-align: center;
+        font-size: 4em;
+        display: block;
+        padding: 20px 0 0 0;
+        margin: 0 0 -40px 0;
+        color: white;
+        text-shadow: -3px 2px 1px #e7b27b;
+    }
+
+    .game-board_outer {
+        width: 40%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+        position: relative;
+        display: block;
+        background-color: white;
+        box-shadow: 0px 4px 10px 0px #333;
+        z-index:200;
+    }
+    .game-board_outer:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+
+    .game-board_inner {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+
+    .game-board_elements {
+        width: 33.333333333333333%;
+        height: 33.333333333333333%;
+        float: left;
+        border: 1px solid #ccc;
+    }
+
+    .game-square {
+        display: none;
+    }
+    .game-square_label {
+        height: 100%;
+        width:  100%;
+        display: block;
+        cursor: pointer;
+    }
+
+    .game-square:disabled + .game-square_label {
+        height: 100%;
+        width: 100%;
+    }
+
+    .x .game-square:disabled + .game-square_label {
+        background-image: url('../images/x3d.svg');
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: center;
+    }
+
+    .o .game-square:disabled + .game-square_label {
+        background-image: url('../images/o3d.svg');
+        background-repeat: no-repeat;
+        background-size: 80%;
+        background-position: center;
+    }
+
+    .player-area {
+        top: auto;
+        bottom:5%;
+        left:50%;
+        width:40%;
+        position: absolute;
+        transform: translate(-50%, 0);
+        display: block;
+    }
+
+    .player-bubble.active{
+        box-shadow: 0px 0px 0px 10px #85471e;
+    }
+
+    .player-bubble_x {
+        width: 150px;
+        height:30px;
+        border-radius: 15px;
+        background-color: #fff;
+        display: block;
+        position: relative;
+        float: left;
+    }
+
+    .player-bubble_o {
+        width: 150px;
+        height: 30px;
+        border-radius: 15px;
+        background-color: #fff;
+        display: block;
+        position: relative;
+        float: right;
+    }
+
+    .player-name {
+        position: absolute;
+        right:15px;
+        top:2px;
+        text-align: center;
+    }
+
+    .player-bubble-icon_x {
+        position: absolute;
+        left: 5px;
+        top:2px;
+        width: 25px;
+        height:26px;
+        background-image: url('../images/x3d.svg');
+        background-size: 25px;
+    }
+
+    .player-bubble-icon_o {
+        position: absolute;
+        left: 5px;
+        top:2px;
+        width: 25px;
+        height:26px;
+        background-image: url('../images/o3d.svg');
+        background-size: 25px;
+    }
+
+    .game-piece-decoration {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+    }
+
+    .game-piece-decoration .x {
+        width: 125px;
+        height: 132px;
+        display: block;
+        background-image: url('../images/x3d.svg');
+        background-size: 125px;
+    }
+
+    .game-piece-decoration .o {
+        width: 125px;
+        height: 132px;
+        display: block;
+        background-image: url('../images/o3d.svg');
+        background-size: 125px;
+    }
+
+    .game-piece-decoration .x:nth-child(1) {
+        position: absolute;
+        top: -2%;
+        left: 75%;
+    }
+
+    .game-piece-decoration .x:nth-child(2) {
+        position: absolute;
+        top: 10%;
+        left: 25%;
+    }
+
+    .game-piece-decoration .x:nth-child(3) {
+        position: absolute;
+        top: 26%;
+        left: -2%;
+        transform: rotate(30deg);
+    }
+
+    .game-piece-decoration .o:nth-child(4) {
+        position: absolute;
+        top: 5%;
+        left: 23%;
+        transform: rotate(17deg);
+    }
+
+    .game-piece-decoration .o:nth-child(5) {
+        position: absolute;
+        top: 7%;
+        left: 80%;
+        transform: rotate(110deg);
+    }
+
+    .game-piece-decoration .o:nth-child(6) {
+        position: absolute;
+        top: -4%;
+        left: 5%;
+        transform: rotate(5deg);
+    }
+
+    .restart-icon {
+        left: auto;
+        bottom: 50px;
+        right: 50px;
+        position: absolute;
+        width: 100px;
+        height: 105px;
+        display: block;
+        background-image: url('../images/reload.svg');
+        background-size: 100px;
+        cursor: pointer;
+        z-index: 300;
+    }
+
+    .end-screen {
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        width: 100%;
+        z-index: 300;
+        font-size: 10em;
+        color: red;
+        transform: translate(-50%, -50%);
+        display: block;
+        text-align: center;
+    }
+}
